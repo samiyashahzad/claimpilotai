@@ -1,5 +1,5 @@
-streamlit==1.30.0        # or latest stable version
+streamlit       # or latest stable version
 langchain-groq           # since you are using ChatGroq
 langchain-core           # required for HumanMessage, SystemMessage
-Pillow==10.0.0           # for image processing (PIL)
-python-dotenv==1.0.1     # needed for load_dotenv()
+Pillow        # for image processing (PIL)
+python-dotenv    # needed for load_dotenv()
