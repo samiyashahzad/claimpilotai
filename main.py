@@ -45,7 +45,7 @@ async def audit_damage(file: UploadFile = File(...)):
                     "total_estimate_pkr": "total",
                     "verdict": "Approved/Flagged",
                     "fraud_analysis": "Looks authentic / Suspected digital manipulation",
-                    "fraud_confidence_score": 95
+                    "fraud_confidence_score": 95 // Integer from 0 to 100. 100 means completely authentic, 0 means definite fraud.
                 }
             """),
             HumanMessage(content=[
