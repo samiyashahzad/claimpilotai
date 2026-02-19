@@ -1,5 +1,6 @@
-streamlit       # or latest stable version
-langchain-groq           # since you are using ChatGroq
-langchain-core           # required for HumanMessage, SystemMessage
-Pillow        # for image processing (PIL)
-python-dotenv    # needed for load_dotenv()
+fastapi
+uvicorn
+python-multipart
+langchain-groq
+python-dotenv
+pillow
