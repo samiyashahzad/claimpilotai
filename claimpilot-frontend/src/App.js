@@ -69,7 +69,7 @@ function App() {
     setResult(null);
 
     try {
-      const response = await fetch("http://127.0.0.1:8000/api/audit", {
+      const response = await fetch("https://sofiajeon-claimpilot.hf.space/api/audit", {
         method: "POST",
         body: formData,
       });
