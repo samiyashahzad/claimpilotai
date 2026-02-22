@@ -1,4 +1,4 @@
-# 🚗 ClaimPilot AI — Agentic Auto-Insurance Surveyor [cite: 1]
+# 🚗 ClaimPilot AI — Agentic Auto-Insurance Surveyor 
 
 ![Live Demo](https://img.shields.io/badge/Live_App-Vercel-black?style=for-the-badge&logo=vercel)
 ![Backend](https://img.shields.io/badge/API-Hugging_Face-yellow?style=for-the-badge&logo=huggingface)
