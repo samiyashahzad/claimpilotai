@@ -184,10 +184,6 @@ uvicorn main:app --reload
 - Groq - low-latency inference
 - Multimodal LLM - damage analysis and fraud cues
 
-## Suggested GitHub Topics
-
-`insurance-ai` `fastapi` `langchain` `groq` `llm` `vision-ai` `react` `multimodal` `computer-vision` `hackathon` `ai-agent`
-
 ## License
 
 MIT License
