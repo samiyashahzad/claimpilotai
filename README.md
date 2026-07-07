@@ -1,14 +1,22 @@
 # ClaimPilot AI
-Agentic Vision AI for Automated Vehicle Insurance Claims
+Vision AI for Automated Vehicle Insurance Claims
+
+![Overview](./assets/overview.svg)
 
 ![Live Demo](https://img.shields.io/badge/Live_App-Vercel-black?style=for-the-badge&logo=vercel)
 ![Backend](https://img.shields.io/badge/API-Hugging_Face-yellow?style=for-the-badge&logo=huggingface)
 ![Python](https://img.shields.io/badge/Python-FastAPI-blue?style=for-the-badge&logo=fastapi)
 ![React](https://img.shields.io/badge/React-Frontend-61DAFB?style=for-the-badge&logo=react)
 
-ClaimPilot AI is an agentic vehicle insurance assessment system that automates preliminary accident surveys from a single vehicle image. It uses vision AI, structured reasoning, and local cost estimation to help insurers reduce manual inspection time, identify potentially fraudulent claims, and generate repair estimates in Pakistani Rupees (PKR).
+ClaimPilot AI is a vision AI-powered vehicle insurance assessment system that automates preliminary accident surveys from a single vehicle image. It uses a multimodal LLM, structured prompting, and local cost estimation to generate repair estimates in Pakistani Rupees (PKR) and assist insurers during the initial claims assessment process.
 
-Live demo: https://claimpilotai.vercel.app/
+[![Live Demo](https://img.shields.io/badge/Live_Demo-Visit_Site-00D4FF?style=for-the-badge)](https://claimpilotai.vercel.app/)
+
+## Why ClaimPilot?
+
+Manual vehicle inspections can take days and often require in-person assessments, leading to slower claims processing and inconsistent evaluations.
+
+ClaimPilot AI streamlines this workflow by combining Vision AI, structured reasoning, and automated cost estimation to generate consistent preliminary assessments from a single uploaded image.
 
 ## Features
 
@@ -19,7 +27,7 @@ Live demo: https://claimpilotai.vercel.app/
 - Structured JSON output
 - FastAPI backend
 - React frontend
-- Llama 4 Vision integration
+- Multimodal LLM integration
 
 ## Architecture
 
@@ -28,7 +36,7 @@ flowchart TD
     A[User] --> B[React Frontend]
     B --> C[FastAPI]
     C --> D[LangChain]
-    D --> E[Llama 4 Vision]
+    D --> E[Multimodal LLM]
     E --> F[Structured JSON]
     F --> G[Repair Estimate]
 ```
@@ -40,7 +48,7 @@ ClaimPilot uses a simple but reliable pipeline:
 1. The user uploads a vehicle damage photo in the React app.
 2. The frontend sends the image to the FastAPI backend.
 3. LangChain orchestrates the vision prompt and response handling.
-4. Llama 4 Vision analyzes the image for damage and fraud indicators.
+4. The multimodal LLM analyzes the image for damage and fraud indicators.
 5. The model returns structured JSON.
 6. The backend converts that output into a repair estimate in PKR.
 
@@ -48,14 +56,49 @@ ClaimPilot uses a simple but reliable pipeline:
 
 Recruiters can understand the product flow at a glance:
 
-1. Upload page
-   ![Upload page](./assets/screenshots/upload-page.png)
-2. Damage analysis
-   ![Damage analysis](./assets/screenshots/upload-page-with-image.png)
-3. JSON report
-   ![JSON report](./assets/screenshots/audit-summary.png)
-4. Cost estimate
-   ![Cost estimate](./assets/screenshots/itemized-costs.png)
+<table>
+  <tr>
+    <td align="center">
+      <strong>Upload</strong><br>
+      <img src="./assets/screenshots/upload-page.png" alt="Upload page" />
+    </td>
+    <td align="center">
+      <strong>Damage Analysis</strong><br>
+      <img src="./assets/screenshots/upload-page-with-image.png" alt="Damage analysis" />
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <strong>JSON Report</strong><br>
+      <img src="./assets/screenshots/audit-summary.png" alt="JSON report" />
+    </td>
+    <td align="center">
+      <strong>Cost Estimate</strong><br>
+      <img src="./assets/screenshots/itemized-costs.png" alt="Cost estimate" />
+    </td>
+  </tr>
+</table>
+
+## API Example
+
+```json
+{
+  "damaged_parts": [
+    {
+      "part": "Front Bumper",
+      "severity": "High",
+      "estimated_cost": 42000
+    }
+  ],
+  "itemized_costs": {
+    "Front Bumper": "PKR 42,000"
+  },
+  "total_estimate_pkr": "PKR 98,000",
+  "verdict": "Flagged",
+  "fraud_analysis": "Suspected stock photo",
+  "fraud_confidence_score": 60
+}
+```
 
 ## Engineering Challenges
 
@@ -79,6 +122,14 @@ My responsibilities included:
 - Structuring JSON outputs
 - Building the PKR cost estimation pipeline
 
+## Acknowledgements
+
+Developed during a hackathon project.
+
+Frontend support came from my teammate.
+
+I led the AI/backend system, including the FastAPI service, LangChain orchestration, prompt engineering, and repair estimation pipeline.
+
 ## Future Work
 
 - Multi-image support
@@ -95,6 +146,7 @@ claimpilotai/
 |-- assets/
 |-- backend/
 |-- claimpilot-frontend/
+|-- LICENSE
 |-- README.md
 `-- .gitignore
 ```
@@ -126,12 +178,16 @@ uvicorn main:app --reload
 
 ## Tech Stack
 
-- React
-- FastAPI
-- LangChain
-- Groq
-- Llama 4 Vision
+- React - frontend interface
+- FastAPI - inference API layer
+- LangChain - workflow orchestration
+- Groq - low-latency inference
+- Multimodal LLM - damage analysis and fraud cues
 
-## Live Link
+## Suggested GitHub Topics
 
-https://claimpilotai.vercel.app/
+`insurance-ai` `fastapi` `langchain` `groq` `llm` `vision-ai` `react` `multimodal` `computer-vision` `hackathon` `ai-agent`
+
+## License
+
+MIT License
