@@ -1,11 +1,12 @@
-# 🚗 ClaimPilot AI — Agentic Auto-Insurance Surveyor 
+# 🚗 ClaimPilot AI
+Agentic Vision AI for Automated Vehicle Insurance Claims
 
 ![Live Demo](https://img.shields.io/badge/Live_App-Vercel-black?style=for-the-badge&logo=vercel)
 ![Backend](https://img.shields.io/badge/API-Hugging_Face-yellow?style=for-the-badge&logo=huggingface)
 ![Python](https://img.shields.io/badge/Python-FastAPI-blue?style=for-the-badge&logo=fastapi)
 ![React](https://img.shields.io/badge/React-Frontend-61DAFB?style=for-the-badge&logo=react)
 
-ClaimPilot AI provides instant, AI-driven car damage surveys designed for Pakistani insurers and claims operations teams. By replacing slow, manual inspections with a fast, consistent agentic workflow, the system estimates repair costs in PKR, highlights potential fraud, and accelerates approvals using a single uploaded crash photo.
+ClaimPilot AI is an agentic vehicle insurance assessment system that automates preliminary accident surveys from a single vehicle image. Using Vision AI, structured reasoning, and cost estimation, it helps insurers reduce manual inspection time, identify potentially fraudulent claims, and generate repair estimates in Pakistani Rupees (PKR)
 # live link 
 https://claimpilotai.vercel.app/
 
