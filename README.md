@@ -23,7 +23,7 @@ ClaimPilot AI streamlines this workflow by combining Vision AI, structured reaso
 - Upload accident photos
 - Vision-based damage detection
 - Localized repair estimates in PKR
-- Fraud flagging
+- Potential fraud indicators
 - Structured JSON output
 - FastAPI backend
 - React frontend
@@ -180,7 +180,7 @@ uvicorn main:app --reload
 
 - React - frontend interface
 - FastAPI - inference API layer
-- LangChain - workflow orchestration
+- LangChain – prompt orchestration and structured output handling
 - Groq - low-latency inference
 - Multimodal LLM - damage analysis and fraud cues
 
