@@ -1,4 +1,4 @@
-# 🚗 ClaimPilot AI
+# ClaimPilot AI
 Agentic Vision AI for Automated Vehicle Insurance Claims
 
 ![Live Demo](https://img.shields.io/badge/Live_App-Vercel-black?style=for-the-badge&logo=vercel)
@@ -6,32 +6,132 @@ Agentic Vision AI for Automated Vehicle Insurance Claims
 ![Python](https://img.shields.io/badge/Python-FastAPI-blue?style=for-the-badge&logo=fastapi)
 ![React](https://img.shields.io/badge/React-Frontend-61DAFB?style=for-the-badge&logo=react)
 
-ClaimPilot AI is an agentic vehicle insurance assessment system that automates preliminary accident surveys from a single vehicle image. Using Vision AI, structured reasoning, and cost estimation, it helps insurers reduce manual inspection time, identify potentially fraudulent claims, and generate repair estimates in Pakistani Rupees (PKR)
-# live link 
-https://claimpilotai.vercel.app/
+ClaimPilot AI is an agentic vehicle insurance assessment system that automates preliminary accident surveys from a single vehicle image. It uses vision AI, structured reasoning, and local cost estimation to help insurers reduce manual inspection time, identify potentially fraudulent claims, and generate repair estimates in Pakistani Rupees (PKR).
 
-## 🚀 The Problem & Solution
-Current manual surveys take days, require physical paperwork, and create operational bottlenecks. Human variability introduces errors, increasing exposure to fraudulent claims. For Pakistani insurers, this means slower payouts and higher operational costs.
+Live demo: https://claimpilotai.vercel.app/
 
-ClaimPilot solves this through a 5-step automated workflow:
-1. **Simple Photo Upload**: Policyholders upload a crash photo through a lightweight React web app.
-2.**Automated Damage Analysis**: Our Llama-4 Agent inspects the image and identifies damaged components.
-3. **Severity Scoring & Bounding Boxes**: Localizes damage (e.g., bumper, headlight) with confidence scores.
-4. **Itemized Costing (PKR)**: Calculates line-item labor, parts, and paint costs mapped to local market rates.
-5. **Fraud Detection**: Automated checks for improbable damage patterns raise a "flagged" verdict for investigator review.
+## Features
 
-## 🧠 Technical Architecture
+- Upload accident photos
+- Vision-based damage detection
+- Localized repair estimates in PKR
+- Fraud flagging
+- Structured JSON output
+- FastAPI backend
+- React frontend
+- Llama 4 Vision integration
 
-ClaimPilot AI is built as a decoupled monorepo, utilizing a modern AI stack:
+## Architecture
 
-* **Frontend (`/claimpilot-frontend`)**: Built with React.js and deployed on Vercel. Handles the UI, image base64 encoding, and dynamic JSON data mapping.
-* **Backend (`/backend`)**: Built with Python and FastAPI, deployed on Hugging Face Spaces. 
-* **AI Orchestration**: LangChain coordinates the agent steps, forcing strict JSON outputs via structured prompt templates.
-* **Inference Engine**: Powered by Llama-4 Vision models via Groq, with temperature set to `0.0` for deterministic, reliable financial outputs.
+```mermaid
+flowchart TD
+    A[User] --> B[React Frontend]
+    B --> C[FastAPI]
+    C --> D[LangChain]
+    D --> E[Llama 4 Vision]
+    E --> F[Structured JSON]
+    F --> G[Repair Estimate]
+```
 
-## 💻 Local Development Setup
+## How It Works
 
-Clone the repository to your local machine:
+ClaimPilot uses a simple but reliable pipeline:
+
+1. The user uploads a vehicle damage photo in the React app.
+2. The frontend sends the image to the FastAPI backend.
+3. LangChain orchestrates the vision prompt and response handling.
+4. Llama 4 Vision analyzes the image for damage and fraud indicators.
+5. The model returns structured JSON.
+6. The backend converts that output into a repair estimate in PKR.
+
+## Screenshots
+
+Recruiters can understand the product flow at a glance:
+
+1. Upload page
+   ![Upload page](./assets/screenshots/upload-page.png)
+2. Damage analysis
+   ![Damage analysis](./assets/screenshots/upload-page-with-image.png)
+3. JSON report
+   ![JSON report](./assets/screenshots/audit-summary.png)
+4. Cost estimate
+   ![Cost estimate](./assets/screenshots/itemized-costs.png)
+
+## Engineering Challenges
+
+- Maintaining deterministic outputs from the vision LLM
+- Designing structured JSON responses
+- Handling large image payloads
+- Balancing inference speed with accuracy
+- Mapping AI outputs into repair cost estimates
+
+## My Contribution
+
+During the hackathon, I served as the AI/Backend Lead.
+
+My responsibilities included:
+
+- Designing the AI workflow
+- Building the FastAPI backend
+- Implementing LangChain orchestration
+- Integrating the vision model
+- Prompt engineering
+- Structuring JSON outputs
+- Building the PKR cost estimation pipeline
+
+## Future Work
+
+- Multi-image support
+- VIN decoding
+- OCR on insurance documents
+- Human-in-the-loop approval
+- Historical claim comparison
+- Fine-tuned damage detection
+
+## Repository Structure
+
+```text
+claimpilotai/
+|-- assets/
+|-- backend/
+|-- claimpilot-frontend/
+|-- README.md
+`-- .gitignore
+```
+
+## Local Development Setup
+
+Clone the repository:
+
 ```bash
-git clone [https://github.com/yourusername/claimpilotai.git](https://github.com/yourusername/claimpilotai.git)
+git clone https://github.com/samiyashahzad/claimpilotai.git
 cd claimpilotai
+```
+
+### Frontend
+
+```bash
+cd claimpilot-frontend
+npm install
+npm start
+```
+
+### Backend
+
+```bash
+cd backend
+pip install -r requirements.txt
+uvicorn main:app --reload
+```
+
+## Tech Stack
+
+- React
+- FastAPI
+- LangChain
+- Groq
+- Llama 4 Vision
+
+## Live Link
+
+https://claimpilotai.vercel.app/
